@@ -197,6 +197,25 @@ freeze: install-from-txt
 	@$(VENV)/bin/uv pip freeze > requirements.lock
 	@echo "requirements.lock created successfully"
 
+.PHONY: pre-commit-install pre-commit-update pre-commit-run pre-commit-clean
+
+# Install pre-commit and git hooks
+pre-commit-install:
+	python -m pip install pre-commit
+	pre-commit install
+
+# Update pre-commit hooks to latest versions
+pre-commit-update:
+	pre-commit autoupdate
+
+# Run pre-commit hooks on all files
+pre-commit-run:
+	pre-commit run --all-files
+
+# Clean pre-commit cache
+pre-commit-clean:
+	pre-commit clean
+
 # Help command
 .PHONY: help
 help:
@@ -217,4 +236,18 @@ help:
 	@echo "  make lint                - Lint code with flake8"
 	@echo "  make test                - Run tests"
 	@echo "  make coverage            - Run tests with coverage report"
-	@echo "  make help                - Show this help message" 
+	@echo "  make pre-commit-install  - Install pre-commit and git hooks"
+	@echo "  make pre-commit-update   - Update pre-commit hooks to latest versions"
+	@echo "  make pre-commit-run      - Run pre-commit hooks on all files"
+	@echo "  make pre-commit-clean    - Clean pre-commit cache"
+	@echo "  make help                - Show this help message"
+
+.PHONY: setup-dev
+
+# Set up the complete development environment
+setup-dev: venv install pre-commit-install
+	@echo "Development environment setup complete!"
+	@echo "You can now start developing. Try:"
+	@echo "  make format    - Format your code"
+	@echo "  make lint      - Run linting"
+	@echo "  make test      - Run tests"
