@@ -54,3 +54,35 @@ This will:
 - Install all dependencies
 - Install development dependencies
 - Set up pre-commit hooks
+
+### Alternative Setup with uv
+
+If you prefer using `uv` (a fast Python package installer and resolver):
+
+1. Install `uv` if you haven't already:
+
+On macOS with Homebrew:
+
+```bash
+brew install uv
+```
+
+Or using the install script:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+2. Create and activate a virtual environment:
+
+```bash
+uv venv
+source .venv/bin/activate  # On Unix/macOS
+```
+
+3. Install dependencies:
+
+```bash
+uv pip install -r requirements.txt
+uv pip install -r requirements-dev.txt
+```
