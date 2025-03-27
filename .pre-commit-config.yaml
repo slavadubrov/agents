@@ -17,6 +17,9 @@ repos:
      hooks:
         - id: black
           language_version: python3
+        - id: black-jupyter
+          language_version: python3
+          types: [jupyter]
 
    - repo: https://github.com/pycqa/isort
      rev: 6.0.1
