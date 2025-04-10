@@ -5,7 +5,7 @@ import logging
 import os
 from typing import Dict, List
 
-from smolagents import CodeAgent, HfApiModel
+from smolagents import CodeAgent, OpenAIServerModel
 
 from technical_blog_smolagents.agents.blog_planning_agent import BlogPlanningAgent
 from technical_blog_smolagents.agents.blog_writing_agent import BlogWritingAgent
@@ -53,10 +53,9 @@ class BlogManager:
         """Initialize the manager with specialized agents.
 
         Args:
-            model: The LLM model to use (default: HfApiModel)
+            model: The LLM model to use (default: OpenAIServerModel)
         """
-        # Use provided model or default to HfApiModel
-        self.model = model or HfApiModel()
+        self.model = OpenAIServerModel(model_id="gpt-4o")
 
         # Create specialized agents
         self.planning_agent = BlogPlanningAgent(model=self.model)
@@ -223,16 +222,14 @@ def main():
     parser.add_argument(
         "--model-name",
         type=str,
-        default=None,
+        default="gpt-4o-mini",
         help="HuggingFace model name to use for the agents",
     )
 
     args = parser.parse_args()
 
     # Create a custom model if specified
-    model = None
-    if args.model_name:
-        model = HfApiModel(model_id=args.model_name)
+    model = OpenAIServerModel(model_id=args.model_name)
 
     # Create the blog manager
     manager = BlogManager(model=model)

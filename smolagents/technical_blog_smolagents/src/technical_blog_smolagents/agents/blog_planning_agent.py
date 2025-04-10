@@ -6,7 +6,6 @@ from smolagents import (
     HfApiModel,
     VisitWebpageTool,
 )
-from smolagents.tools import PythonInterpreterTool
 
 from technical_blog_smolagents.tools.blog_tools import (
     create_roadmap_file,
@@ -32,7 +31,6 @@ class BlogPlanningAgent:
             VisitWebpageTool(),
             research_topic,
             create_roadmap_file,
-            PythonInterpreterTool(),
         ]
 
         # Create the agent with tools

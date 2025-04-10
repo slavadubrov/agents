@@ -1,7 +1,6 @@
 from typing import Dict, List
 
 from smolagents import CodeAgent, DuckDuckGoSearchTool, HfApiModel, VisitWebpageTool
-from smolagents.tools import PythonInterpreterTool
 
 from technical_blog_smolagents.tools.blog_tools import (
     read_file,
@@ -29,7 +28,6 @@ class BlogWritingAgent:
             research_topic,
             save_to_file,
             read_file,
-            PythonInterpreterTool(),
         ]
 
         # Create the agent with tools
