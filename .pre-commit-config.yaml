@@ -12,24 +12,15 @@ repos:
       - id: check-merge-conflict
       - id: detect-private-key
 
-  - repo: https://github.com/psf/black
-    rev: 25.1.0
-    hooks:
-      - id: black
-        language_version: python3
-      - id: black-jupyter
-        language_version: python3
-        types: [jupyter]
-
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 1.9.1
     hooks:
       - id: nbqa
         additional_dependencies: [isort]
-        args: ["isort", "--profile", "black"]
+        args: ["isort"]
       - id: nbqa
-        additional_dependencies: [flake8]
-        args: ["flake8", "--ignore=E203,W503"]
+        additional_dependencies: [ruff]
+        args: ["ruff", "--fix"]
 
   - repo: https://github.com/kynan/nbstripout
     rev: 0.8.1
@@ -55,12 +46,6 @@ repos:
       - id: ruff
         args: [--fix]
       - id: ruff-format
-
-  - repo: https://github.com/pycqa/flake8
-    rev: 7.1.2
-    hooks:
-      - id: flake8
-        additional_dependencies: [flake8-docstrings]
 
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v4.0.0-alpha.8
