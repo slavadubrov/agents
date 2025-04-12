@@ -115,3 +115,6 @@ config.local.yml
 *db*
 *output*
 .doc
+
+# Ignore all data directories in the project
+**/data/
