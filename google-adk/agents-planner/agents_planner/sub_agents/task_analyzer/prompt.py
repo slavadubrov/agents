@@ -2,7 +2,7 @@
 This prompt is used to analyze the task and break it down into subtasks.
 """
 
-from constants import STATE_TASK
+from ...modules.constants import STATE_TASK
 
 INSTRUCTION = f"""
 You are a Task Analysis AI.

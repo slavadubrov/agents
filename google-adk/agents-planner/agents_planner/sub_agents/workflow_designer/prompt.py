@@ -2,7 +2,7 @@
 This prompt is used to determine the optimal workflow pattern for the agent system.
 """
 
-from constants import STATE_AGENT_DESCRIPTIONS
+from ...modules.constants import STATE_AGENT_DESCRIPTIONS
 
 INSTRUCTION = f"""
 You are a Workflow Design AI.

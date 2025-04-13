@@ -1,9 +1,3 @@
-import os
-
-# --- Constants ---
-
-GEMINI_MODEL = os.getenv("GOOGLE_GENAI_MODEL", "gemini-2.0-flash-exp")
-
 # --- State Keys ---
 STATE_TASK = "task"
 STATE_SUBTASKS = "subtasks"

@@ -2,7 +2,11 @@
 This prompt is used to create a comprehensive markdown description of the agent system.
 """
 
-from constants import STATE_AGENT_DESCRIPTIONS, STATE_SUBTASKS, STATE_WORKFLOW_PATTERN
+from ...modules.constants import (
+    STATE_AGENT_DESCRIPTIONS,
+    STATE_SUBTASKS,
+    STATE_WORKFLOW_PATTERN,
+)
 
 INSTRUCTION = f"""
 You are a Documentation AI.

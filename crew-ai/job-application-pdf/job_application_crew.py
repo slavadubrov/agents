@@ -12,10 +12,9 @@ import os
 from pathlib import Path
 
 import typer
+from common.utils import get_openai_api_key, get_serper_api_key, load_configs
 from crewai import Agent, Crew, Task
 from crewai_tools import PDFSearchTool, ScrapeWebsiteTool, SerperDevTool
-
-from common.utils import get_openai_api_key, get_serper_api_key, load_configs
 
 # Configure logging
 logging.basicConfig(

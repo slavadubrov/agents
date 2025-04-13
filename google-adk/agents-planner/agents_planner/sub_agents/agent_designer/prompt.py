@@ -2,7 +2,7 @@
 This prompt is used to design appropriate agents for each subtask.
 """
 
-from constants import STATE_SUBTASKS
+from ...modules.constants import STATE_SUBTASKS
 
 INSTRUCTION = f"""
 You are an Agent Design AI.

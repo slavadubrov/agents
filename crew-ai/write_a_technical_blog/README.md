@@ -5,11 +5,13 @@ This project uses CrewAI to generate technical blog posts with a team of special
 ## Features
 
 - **Blog Planning Crew**: Creates a comprehensive roadmap for a technical blog series
+
   - Strategist: Develops high-level strategy and identifies target audience
   - Planner: Creates detailed outlines for each blog post
   - Reviewer: Ensures the plan is coherent and valuable
 
 - **Blog Writing Crew**: Writes individual blog posts based on the roadmap
+
   - Researcher: Gathers accurate, up-to-date information on the topic
   - Content Writer: Creates the main blog post content
   - Code Writer: Develops clear, well-documented code examples
@@ -51,6 +53,7 @@ python -m write_a_technical_blog.main
 ```
 
 This will:
+
 1. Generate a blog series roadmap
 2. Create individual blog posts based on the roadmap
 3. Save all content as Markdown files in the `output` directory
@@ -64,6 +67,7 @@ This will:
 ## Output
 
 The system generates:
+
 - A roadmap file (`Blog_Series_Roadmap.md`) with the overall plan
 - Individual blog post files with content, code examples, and diagrams
 
