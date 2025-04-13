@@ -6,7 +6,6 @@ import uuid
 
 from crewai.flow.flow import Flow, listen, start
 from pydantic import BaseModel, Field
-
 from write_a_technical_blog.crews.blog_planning_crew.blog_planning_crew import (
     BlogPlanningCrew,
 )
@@ -54,8 +53,8 @@ class BlogState(BaseModel):
     goal: str = """
         Create a comprehensive series of technical blog posts about comprehensive
         overview with examples of the most common design patterns used in machine
-        learning. Each post should explain a specific pattern with real-world 
-        examples, code snippets, and diagrams. The content should be suitable for 
+        learning. Each post should explain a specific pattern with real-world
+        examples, code snippets, and diagrams. The content should be suitable for
         intermediate Python ML Engineers looking to improve their skills.
     """
 
@@ -106,8 +105,7 @@ class BlogFlow(Flow[BlogState]):
             self.state.goal = goal
             self.state.blog_roadmap = post_outlines
             logger.info(
-                f"Loaded roadmap from {roadmap_file} with "
-                f"{len(post_outlines)} posts"
+                f"Loaded roadmap from {roadmap_file} with {len(post_outlines)} posts"
             )
 
     @start()
@@ -157,7 +155,7 @@ class BlogFlow(Flow[BlogState]):
 
         async def write_single_post(post_outline, index):
             """Write a single blog post"""
-            logger.info(f"Writing Blog Post {index+1}: {post_outline.title}")
+            logger.info(f"Writing Blog Post {index + 1}: {post_outline.title}")
             post_index_plus_one = index + 1  # Calculate this value separately
             output = (
                 BlogWritingCrew()
@@ -183,7 +181,7 @@ class BlogFlow(Flow[BlogState]):
             post = BlogPost(title=title, content=content)
 
             # Save the blog post to a file
-            filename = f"output/Blog_Post_{index+1}_{title.replace(' ', '_')}.md"
+            filename = f"output/Blog_Post_{index + 1}_{title.replace(' ', '_')}.md"
             with open(filename, "w", encoding="utf-8") as file:
                 file.write(content)
 

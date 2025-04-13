@@ -18,7 +18,7 @@ research_chapter:
 
 write_chapter:
   description: >
-    Write a well-structured chapter based on the chapter title, goal, and outline description. 
+    Write a well-structured chapter based on the chapter title, goal, and outline description.
     Each chapter should be written in markdown and should contain around 3,000 words.
 
     Here is the topic for the book: {topic}

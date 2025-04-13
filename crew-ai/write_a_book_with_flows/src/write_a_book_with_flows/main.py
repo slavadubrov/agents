@@ -4,7 +4,6 @@ from typing import List
 
 from crewai.flow.flow import Flow, listen, start
 from pydantic import BaseModel
-
 from write_a_book_with_flows.crews.write_book_chapter_crew.write_book_chapter_crew import (
     WriteBookChapterCrew,
 )

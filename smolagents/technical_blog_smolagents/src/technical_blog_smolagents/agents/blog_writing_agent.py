@@ -1,12 +1,12 @@
 from typing import Dict, List
 
-from smolagents import CodeAgent, DuckDuckGoSearchTool, HfApiModel, VisitWebpageTool
-
 from technical_blog_smolagents.tools.blog_tools import (
     read_file,
     research_topic,
     save_to_file,
 )
+
+from smolagents import CodeAgent, DuckDuckGoSearchTool, HfApiModel, VisitWebpageTool
 
 
 class BlogWritingAgent:

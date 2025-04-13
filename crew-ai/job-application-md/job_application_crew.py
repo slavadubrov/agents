@@ -3,9 +3,9 @@
 Job Application Crew Script
 
 This script uses crewAI to tailor a resume for a specific job posting.
-It accepts a resume file path (MUST BE IN MARKDOWN FORMAT), job posting URL, 
-GitHub profile URL, and personal writeup as inputs. The script generates and 
-saves a tailored resume and interview preparation materials to the specified 
+It accepts a resume file path (MUST BE IN MARKDOWN FORMAT), job posting URL,
+GitHub profile URL, and personal writeup as inputs. The script generates and
+saves a tailored resume and interview preparation materials to the specified
 output directory.
 
 Usage:
@@ -21,10 +21,9 @@ from pathlib import Path
 from typing import Any
 
 import typer
+from common.utils import get_openai_api_key, get_serper_api_key, load_configs
 from crewai import Agent, Crew, Task
 from crewai_tools import FileReadTool, MDXSearchTool, ScrapeWebsiteTool, SerperDevTool
-
-from common.utils import get_openai_api_key, get_serper_api_key, load_configs
 
 logging.basicConfig(
     level=logging.INFO,

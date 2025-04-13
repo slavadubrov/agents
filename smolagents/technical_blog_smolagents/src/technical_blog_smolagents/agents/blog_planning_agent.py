@@ -1,15 +1,15 @@
 from typing import Dict
 
+from technical_blog_smolagents.tools.blog_tools import (
+    create_roadmap_file,
+    research_topic,
+)
+
 from smolagents import (
     CodeAgent,
     DuckDuckGoSearchTool,
     HfApiModel,
     VisitWebpageTool,
-)
-
-from technical_blog_smolagents.tools.blog_tools import (
-    create_roadmap_file,
-    research_topic,
 )
 
 

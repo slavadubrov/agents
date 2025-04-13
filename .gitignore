@@ -108,9 +108,13 @@ config.local.yml
 
 # Database files
 *.db
-*.sqlite3 
+*.sqlite3
 
 # Ignore all files in the files directory
 *files*
 *db*
 *output*
+.doc
+
+# Ignore all data directories in the project
+**/data/
